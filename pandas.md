@@ -14,7 +14,24 @@ in Jupyter Notebook.
 import pandas as pd
 import matplotlib.pyplot as plt
 ```
+# Create sample sales data
+data = {
+    "Date": pd.date_range(start="2023-01-01", periods=10, freq="M"),
+    "Product": ["Laptop", "Tablet", "Phone", "Headphones", "Monitor",
+                "Laptop", "Tablet", "Phone", "Headphones", "Monitor"],
+    "Region": ["North", "South", "East", "West", "North",
+               "South", "East", "West", "North", "South"],
+    "Sales": [2000, 1500, 3000, 1200, 2500, 2200, 1600, 3100, 1300, 2700],
+    "Quantity": [5, 3, 8, 2, 6, 5, 4, 9, 3, 7]
+}
 
+# Convert to DataFrame
+df = pd.DataFrame(data)
+
+# Save as Excel
+df.to_excel("sales_data.xlsx", index=False)
+
+print("Sample dataset created: sales_data.xlsx")
 ------------------------------------------------------------------------
 
 ##  Step 2: Load Excel File
